@@ -7,17 +7,18 @@ using UnityEngine.UI;
 public class GameoverDirector : MonoBehaviour
 {
     
-    public int reset;
+   
+    public int point;
     GameObject PointText;
-    GameObject score;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         //GameDirectorスクリプトからポイントをとってくる
-        
-        
-       
+
+
+        point = GameDirector.GetPoint();
         this.PointText = GameObject.Find("point");
     }
 
@@ -33,7 +34,7 @@ public class GameoverDirector : MonoBehaviour
 
         //pointを表示
         this.PointText.GetComponent<Text>().text =
-            score.ToString() + "point";
+            point.ToString() + "point";
 
     }
 }
